@@ -8,11 +8,11 @@ apt update
 apt install -y multistrap qemu-user-static python3 libparted libparted-dev python3-pip curl rsync
 
 # add Machinekit repo
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 43DDF224
-sudo sh -c \
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 43DDF224
+sh -c \
   "echo 'deb http://deb.machinekit.io/debian buster main' > \
   /etc/apt/sources.list.d/machinekit.list"
-sudo apt-get update
+apt-get update
 
 # download and install Linaro GCC
 cd /tmp

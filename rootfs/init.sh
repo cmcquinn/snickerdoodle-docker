@@ -2,7 +2,7 @@
 
 # install multistrap and qemu-user-static
 apt update
-apt install -y multistrap qemu-user-static python3 libparted libparted-dev python3-pip wget
+apt install -y multistrap qemu-user-static python3 libparted libparted-dev python3-pip curl
 
 # download and install Linaro GCC
 cd /tmp

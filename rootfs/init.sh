@@ -21,5 +21,8 @@ tar xf linaro-gcc.tar.xz
 cd gcc-linaro-7.4.1-2019.02-x86_64_arm-linux-gnueabihf
 rsync -az ./* /usr/local
 
+# install QT build dependencies
+apt install -y build-essential perl python3 git
+
 # mark image as prepared
 touch /etc/system-prepared

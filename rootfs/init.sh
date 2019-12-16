@@ -18,7 +18,8 @@ apt-get update
 cd /tmp
 curl -Lo linaro-gcc.tar.xz https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabihf/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf.tar.xz
 tar xf linaro-gcc.tar.xz
-cd gcc-linaro-7.4.1-2019.02-x86_64_arm-linux-gnueabihf
+rm linaro-gcc.tar.xz
+cd $(find . -name gcc-linaro*)
 rsync -az ./* /usr/local
 
 # install QT build dependencies

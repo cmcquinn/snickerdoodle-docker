@@ -25,5 +25,10 @@ rsync -az ./* /usr/local
 # install QT build dependencies
 apt install -y build-essential perl python3 git
 
+# cleanup temporary files to reduce image size
+cd /tmp
+rm -rf ./*
+apt autoclean
+
 # mark image as prepared
 touch /etc/system-prepared

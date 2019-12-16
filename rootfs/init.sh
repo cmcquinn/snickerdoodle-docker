@@ -5,7 +5,7 @@ set -x # echo commands
 
 # install multistrap and qemu-user-static
 apt update
-apt install -y multistrap qemu-user-static python3 libparted libparted-dev python3-pip curl rsync
+apt install --no-install-recommends -y multistrap qemu-user-static python3 libparted libparted-dev python3-pip curl rsync
 
 # add Machinekit repo
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 43DDF224
@@ -23,12 +23,13 @@ cd $(find . -name gcc-linaro*)
 rsync -az ./* /usr/local
 
 # install QT build dependencies
-apt install -y build-essential perl python3 git
+apt install --no-install-recommends -y build-essential perl python3 git 
 
 # cleanup temporary files to reduce image size
 cd /tmp
 rm -rf ./*
 apt autoclean
+rm -rf /var/lib/apt/lists/*
 
 # mark image as prepared
 touch /etc/system-prepared

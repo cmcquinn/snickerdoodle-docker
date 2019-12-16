@@ -5,7 +5,7 @@ set -x # echo commands
 
 # install curl, rsync, and xz-utils
 apt update
-apt install -y curl rsync xz-utils
+apt install --no-install-recommends -y curl rsync xz-utils
 
 # download and install Linaro GCC
 cd /tmp
@@ -19,6 +19,7 @@ rsync -az ./* /usr/local
 cd /tmp
 rm -rf ./*
 apt autoclean
+rm -rf /var/lib/apt/lists/*
 
 # mark image as prepared
 touch /etc/system-prepared

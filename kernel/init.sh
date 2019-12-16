@@ -3,9 +3,9 @@
 set -e # exit on error
 set -x # echo commands
 
-# install curl, rsync, and xz-utils
+# install curl, rsync, xz-utils, gnupg
 apt update
-apt install --no-install-recommends -y curl rsync xz-utils
+apt install --no-install-recommends -y curl rsync xz-utils gnupg
 
 # download and install Linaro GCC
 cd /tmp

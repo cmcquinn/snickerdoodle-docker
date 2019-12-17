@@ -5,7 +5,7 @@ set -x # echo commands
 
 # install multistrap, qemu-user-static, and other miscellaneous packages
 apt update
-apt install --no-install-recommends -y multistrap qemu-user-static python3 libparted libparted-dev python3-pip curl rsync gnupg xz-utils
+apt install -y multistrap qemu-user-static python3 libparted libparted-dev python3-pip curl rsync gnupg xz-utils
 
 # add Machinekit repo
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 43DDF224

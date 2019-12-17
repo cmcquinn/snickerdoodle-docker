@@ -5,7 +5,7 @@ set -x # echo commands
 
 # install curl, rsync, xz-utils, gnupg, and ca-certificates
 apt update
-apt install --no-install-recommends -y curl rsync xz-utils gnupg ca-certificates
+apt install --no-install-recommends -y curl rsync xz-utils gnupg ca-certificates git
 
 # download and install Linaro GCC
 cd /tmp

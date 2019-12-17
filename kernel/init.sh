@@ -15,6 +15,13 @@ rm linaro-gcc.tar.xz
 cd $(find . -name gcc-linaro*)
 rsync -az ./* /usr/local
 
+# install device tree compiler
+cd /tmp
+git clone https://git.kernel.org/pub/scm/utils/dtc/dtc.git
+cd dtc
+make -j`nproc`
+make install
+
 # clean up temporary files to reduce image size
 cd /tmp
 rm -rf ./*

@@ -19,7 +19,6 @@ rsync -az ./* /usr/local
 cd /tmp
 rm -rf ./*
 apt autoclean
-rm -rf /var/lib/apt/lists/*
 
 # mark image as prepared
 touch /etc/system-prepared

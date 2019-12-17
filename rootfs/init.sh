@@ -16,7 +16,7 @@ cd $(find . -name gcc-linaro*)
 rsync -az ./* /usr/local
 
 # install Qt build dependencies
-apt install --no-install-recommends -y build-essential perl python3 git pkg-config pkg-config-arm-linux-gnueabihf
+apt install --no-install-recommends -y build-essential perl python3 git pkg-config
 
 # cleanup temporary files to reduce image size
 cd /tmp

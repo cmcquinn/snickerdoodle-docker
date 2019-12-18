@@ -14,7 +14,7 @@ apt install --no-install-recommends -y multistrap qemu-user-static python3 libpa
 # rm linaro-gcc.tar.xz
 # cd $(find . -name gcc-linaro*)
 # rsync -az ./* /usr/local
-apt install -y gcc-8-arm-linux-gnueabihf g++-8-arm-linux-gnueabihf gcc-multilib
+apt install -y gcc-8-arm-linux-gnueabihf g++-8-arm-linux-gnueabihf
 
 # install Qt build dependencies
 apt install --no-install-recommends -y build-essential perl python3 git pkg-config

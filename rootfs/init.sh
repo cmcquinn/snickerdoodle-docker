@@ -5,7 +5,7 @@ set -x # echo commands
 
 # install multistrap, qemu-user-static, and other miscellaneous packages
 apt update
-apt install --no-install-recommends -y multistrap qemu-user-static python3 libparted libparted-dev python3-pip curl rsync gnupg xz-utils
+apt install --no-install-recommends -y multistrap qemu-user-static python3 libparted libparted-dev python3-pip python3-setuptools curl rsync gnupg xz-utils
 
 # download and install Linaro GCC
 cd /tmp

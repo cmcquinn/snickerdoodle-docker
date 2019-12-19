@@ -22,6 +22,12 @@ cd dtc
 make -j`nproc`
 make install
 
+# install python utils
+cd /tmp
+git clone https://github.com/cmcquinn/python-utils.git
+cd python-utils
+rsync -avz *.py /usr/local/bin
+
 # clean up temporary files to reduce image size
 cd /tmp
 rm -rf ./*

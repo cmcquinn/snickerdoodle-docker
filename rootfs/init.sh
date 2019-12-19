@@ -22,7 +22,7 @@ apt install --no-install-recommends -y build-essential perl python3 git pkg-conf
 cd /tmp
 git clone https://github.com/cmcquinn/python-utils.git
 cd python-utils
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 rsync -avz *.py /usr/local/bin
 
 # cleanup temporary files to reduce image size

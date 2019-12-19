@@ -26,6 +26,7 @@ make install
 cd /tmp
 git clone https://github.com/cmcquinn/python-utils.git
 cd python-utils
+pip install -r requirements.txt
 rsync -avz *.py /usr/local/bin
 
 # clean up temporary files to reduce image size

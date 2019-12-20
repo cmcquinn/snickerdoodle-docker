@@ -5,11 +5,7 @@ set -x # echo commands
 
 # install multistrap, qemu-user-static, and other miscellaneous packages
 apt update
-apt install --no-install-recommends -y multistrap qemu-user-static python3 libparted python3-pip curl rsync gnupg xz-utils
-
-# install development headers needed to build pyparted
-devpkgs="libparted-dev python3-setuptools python3-wheel python3-dev"
-apt install -y $devpkgs
+apt install --no-install-recommends -y multistrap qemu-user-static python3 python3-parted curl rsync gnupg xz-utils
 
 # download and install Linaro GCC
 cd /tmp
@@ -33,9 +29,6 @@ rsync -avz *.py /usr/local/bin
 cd /tmp
 rm -rf ./*
 apt autoclean
-
-# uninstall development packages
-apt purge -y $devpkgs
 
 # mark image as prepared
 touch /etc/system-prepared

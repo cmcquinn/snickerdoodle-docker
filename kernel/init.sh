@@ -5,7 +5,7 @@ set -x # echo commands
 
 # install curl, rsync, xz-utils, gnupg, and ca-certificates
 apt update
-apt install --no-install-recommends -y curl rsync xz-utils gnupg ca-certificates git build-essential pkg-config bison flex python3-pip
+apt install --no-install-recommends -y curl rsync xz-utils gnupg ca-certificates git build-essential pkg-config bison flex python3-requests
 
 # download and install Linaro GCC
 cd /tmp
@@ -26,7 +26,6 @@ make install
 cd /tmp
 git clone https://github.com/cmcquinn/python-utils.git
 cd python-utils
-pip3 install requests
 cp bintray.py /usr/local/bin
 
 # clean up temporary files to reduce image size

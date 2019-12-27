@@ -5,7 +5,7 @@ set -x # echo commands
 
 # install multistrap, qemu-user-static, and other miscellaneous packages
 apt update
-apt install --no-install-recommends -y multistrap qemu-user-static python3 python3-parted curl rsync gnupg xz-utils ca-certificates
+apt install --no-install-recommends -y multistrap qemu-user-static python3 python3-parted python3-requests curl rsync gnupg xz-utils ca-certificates
 
 # download and install Linaro GCC
 cd /tmp
@@ -22,7 +22,6 @@ apt install --no-install-recommends -y build-essential perl python3 git pkg-conf
 cd /tmp
 git clone https://github.com/cmcquinn/python-utils.git
 cd python-utils
-pip3 install -r requirements.txt
 rsync -avz *.py /usr/local/bin
 
 # cleanup temporary files to reduce image size

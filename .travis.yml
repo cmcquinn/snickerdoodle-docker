@@ -1,19 +1,23 @@
 sudo: required
 services:
-- docker
+  - docker
 language: generic
 before_install:
-- docker login -u cmcquinn -p "$DOCKER_PASS"
+  - docker login -u cmcquinn -p "$DOCKER_PASS"
 jobs:
   include:
-    - name: "rootfs"
+    - stage: "Base"
+      name: "Base image"
+      env: BUILD_DIR=base
+    - stage: "Kernel and rootfs containers"
+      name: "rootfs"
       env: BUILD_DIR=rootfs
-    - name: "kernel"
+      name: "kernel"
       env: BUILD_DIR=kernel
 script:
-- "cd $BUILD_DIR ; ./build.sh"
+  - "cd $BUILD_DIR ; ./build.sh"
 after_success:
-- docker push $REPO
+  - docker push $REPO
 notifications:
   email:
     recipients:

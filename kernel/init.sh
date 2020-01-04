@@ -3,17 +3,9 @@
 set -e # exit on error
 set -x # echo commands
 
-# install curl, rsync, xz-utils, gnupg, and ca-certificates
+# install bison and flex, plus other kernel build dependencies
 apt update
-apt install --no-install-recommends -y curl rsync xz-utils gnupg ca-certificates git build-essential pkg-config bison flex python3-requests
-
-# download and install Linaro GCC
-cd /tmp
-curl -Lo linaro-gcc.tar.xz https://releases.linaro.org/components/toolchain/binaries/latest-7/arm-linux-gnueabihf/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf.tar.xz
-tar xf linaro-gcc.tar.xz
-rm linaro-gcc.tar.xz
-cd $(find . -name gcc-linaro*)
-rsync -az ./* /usr/local
+apt install --no-install-recommends -y bison flex libssl-dev ccache fakeroot
 
 # install device tree compiler
 cd /tmp
@@ -21,12 +13,6 @@ git clone https://git.kernel.org/pub/scm/utils/dtc/dtc.git
 cd dtc
 make -j`nproc`
 make install
-
-# install bintray upload script
-cd /tmp
-git clone https://github.com/cmcquinn/python-utils.git
-cd python-utils
-cp bintray.py /usr/local/bin
 
 # clean up temporary files to reduce image size
 cd /tmp

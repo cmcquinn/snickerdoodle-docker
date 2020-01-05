@@ -26,3 +26,4 @@ rsync -avz *.py /usr/local/bin
 cd /tmp
 rm -rf ./*
 apt autoclean
+rm -rf /var/lib/apt/lists/*

@@ -12,6 +12,7 @@ apt install --no-install-recommends -y perl
 
 # cleanup temporary files to reduce image size
 apt autoclean
+rm -rf /var/lib/apt/lists/*
 
 # mark image as prepared
 touch /etc/system-prepared

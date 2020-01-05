@@ -12,7 +12,7 @@ jobs:
       - docker push $REPO
     - stage: "Kernel and rootfs containers"
       script: "cd rootfs ; ./build.sh"
-      script: "cd kernel ; ./build.sh"
+    - script: "cd kernel ; ./build.sh"
 after_success:
 - docker push $REPO
 notifications:

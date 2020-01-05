@@ -4,19 +4,17 @@ services:
 language: generic
 before_install:
   - docker login -u cmcquinn -p "$DOCKER_PASS"
-env: 
-  - BUILD_DIR=rootfs
-  - BUILD_DIR=kernel
 jobs:
   include:
     - stage: "Base"
-      script:
+      script: 
       - "cd base ; ./build.sh"
       - docker push $REPO
     - stage: "Kernel and rootfs containers"
-      script:
-      - "cd $BUILD_DIR ; ./build.sh"
-      - docker push $REPO
+      script: "cd rootfs ; ./build.sh"
+      script: "cd kernel ; ./build.sh"
+after_success:
+- docker push $REPO
 notifications:
   email:
     recipients:

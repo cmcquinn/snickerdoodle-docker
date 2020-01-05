@@ -9,8 +9,9 @@ jobs:
     - stage: "Base"
       env: BUILD_DIR=base
     - stage: "Kernel and rootfs containers"
-      env: BUILD_DIR=rootfs
-      env: BUILD_DIR=kernel
+      env: 
+      - BUILD_DIR=rootfs
+      - BUILD_DIR=kernel
 script:
   - "cd $BUILD_DIR ; ./build.sh"
   - docker push $REPO

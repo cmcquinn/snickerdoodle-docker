@@ -5,7 +5,7 @@ set -x # echo commands
 
 # install bison and flex, plus other kernel build dependencies
 apt update
-apt install --no-install-recommends -y bison flex libssl-dev ccache fakeroot
+apt install --no-install-recommends -y bison flex libssl-dev ccache fakeroot bc kmod cpio
 
 # install device tree compiler
 cd /tmp

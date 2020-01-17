@@ -5,7 +5,7 @@ set -x # echo commands
 
 # install multistrap, qemu-user-static, and pyparted
 apt update
-apt install --no-install-recommends -y multistrap qemu-user-static python3-parted
+apt install --no-install-recommends -y multistrap qemu-user-static python3-parted dosfstools
 
 # install Qt build dependencies
 apt install --no-install-recommends -y perl

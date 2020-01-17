@@ -8,8 +8,8 @@ apt update
 apt install --no-install-recommends -y python3 python3-requests curl rsync gnupg xz-utils \
 ca-certificates build-essential git-buildpackage git pkg-config
 
-# install arm cross compiler
-apt install -y gcc-arm-linux-gnueabihf
+# install arm cross compiler and ccache
+apt install -y gcc-arm-linux-gnueabihf ccache
 
 # install python utils
 cd /tmp
